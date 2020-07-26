@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>m1</title>
+</head>
+  <body>
+      <main>
+        <div class="container">
+          <div class="task1 task">
+            Напиши функцию-конструктор Account, которая создает объект со свойствами login и email. <br>
+            В prototype функции-конструктора добавь метод getInfo(), который выводит в консоль значения полей login и email объекта который его вызвал.<br>
+            <br>
+            console.log(Account.prototype.getInfo); // function<br>
+
+            const mango = new Account({<br>
+            login: 'Mangozedog',<br>
+            email: 'mango@dog.woof',<br>
+            });<br><br>
+
+            mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof<br><br>
+
+            const poly = new Account({<br>
+            login: 'Poly',<br>
+            email: 'poly@mail.com',<br>
+            });<br><br>
+
+            poly.getInfo(); // Login: Poly, Email: poly@mail.com<br>
+            <button class="task1-go">
+              запустить
+            </button>
+          </div>
+          <div class="task2 task">
+
+            Напиши класс User для создания пользователя со следующим свойствами:<br>
+            <br>
+            name - строка<br>
+            age - число<br>
+            followers - число<br>
+            Добавь метод getInfo(), который, выводит строку: User ${имя} is ${возраст} years old and has ${кол-во фоловеров} followers<br>
+            <br>
+            const mango = new User({<br>
+            name: 'Mango',<br>
+            age: 2,<br>
+            followers: 20,<br>
+            });<br>
+            <br>
+            mango.getInfo(); // User Mango is 2 years old and has 20 followers<br>
+            <br>
+            const poly = new User({<br>
+            name: 'Poly',<br>
+            age: 3,<br>
+            followers: 17,<br>
+            });<br>
+            <br>
+            poly.getInfo(); // User Poly is 3 years old and has 17 followers<br>
+
+
+            <button class="task2-go">
+              запустить
+            </button>
+          </div>
+          <div class="task3 task">
+
+            Напиши класс Storage, который будет создавать объекты для управления складом товаров. <br>
+            При вызове будет получать один аргумент - начальный массив товаров, и записывать его в свойство items.<br>
+            <br>
+            Добавь методы класса:<br>
+            <br>
+            getItems() - возвращает массив текущих товаров<br>
+            addItem(item) - получает новый товар и добавляет его к текущим<br>
+            removeItem(item) - получет товар и, если он есть, удаляет его из текущих<br>
+            const storage = new Storage([<br>
+            'Нанитоиды',<br>
+            'Пролонгер',<br>
+            'Железные жупи',<br>
+            'Антигравитатор',<br>
+            ]);<br>
+            <br>
+            const items = storage.getItems();<br>
+            console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]<br>
+            <br>
+            storage.addItem('Дроид');<br>
+            console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]<br>
+            <br>
+            storage.removeItem('Пролонгер');<br>
+            console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]<br>wwwww
+
+
+            <button class="task3-go">
+              запустить
+            </button>
+          </div>
+          <div class="task4 task">
+
+            Напиши класс StringBuilder. На вход он получает один параметр - строку, которую записывает в свойство _value. <br>
+            <br>
+            Добавь классу следующий функционал:<br>
+            <br>
+            Геттер value - возвращает текущее значение поля _value<br>
+            Метод append(str) - получает парметр str (строку) и добавляет ее в конец _value<br>
+            Метод prepend(str) - получает парметр str (строку) и добавляет ее в начало value<br>
+            Метод pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value<br>
+            const builder = new StringBuilder('.');<br>
+            <br>
+            builder.append('^');<br>
+            console.log(builder.value); // '.^'<br>
+            <br>
+            builder.prepend('^');<br>
+            console.log(builder.value); // '^.^'<br>
+            <br>
+            builder.pad('=');<br>
+            console.log(builder.value); // '=^.^='<br>
+
+            <button class="task4-go">
+              запустить
+            </button>
+
+          </div>
+          <div class="task5 task">
+
+            Напиши класс Car с указанными свойствами и методами. <br>
+            <br>
+            class Car {<br>
+            /*<br>
+            * Добавь статический метод `getSpecs(car)`,<br>
+            * который принимает объект-машину как параметр и выводит<br>
+            * в консоль значения свойств maxSpeed, speed, isOn, distance и price.<br>
+            */<br>
+
+            /*<br>
+            * Конструктор получает объект настроек.<br>
+            *<br>
+            * Добавь свойства будущеего экземпляра класса:<br>
+            *  speed - текущая скорость, изначально 0<br>
+            *  price - цена автомобиля<br>
+            *  maxSpeed - максимальная скорость<br>
+            *  isOn - заведен ли автомобиль, значения true или false. Изначально false<br>
+            *  distance - общий киллометраж, изначально 0<br>
+            */<br>
+            constructor() {}<br>
+            <br>
+            /*<br>
+            * Добавь геттер и сеттер для свойства price,<br>
+            * который будет работать с свойством цены автомобиля.<br>
+            */<br>
+            <br>
+            /*
+            * Добавь код для того чтобы завести автомобиль<br>
+            * Записывает в свойство isOn значение true<br>
+            */<br>
+            turnOn() {}<br>
+            <br>
+            /*
+            * Добавь код для того чтобы заглушить автомобиль<br>
+            * Записывает в свойство isOn значение false,<br>
+            * и сбрасывает текущую скорость в 0<br>
+            */<br>
+            turnOff() {}<br>
+            <br>
+            /*<br>
+            * Добавялет к свойству speed полученное значение,<br>
+            * при условии что результирующая скорость<br>
+            * не больше чем значение свойства maxSpeed<br>
+            */<br>
+            accelerate(value) {}<br>
+            <br>
+            /*<br>
+            * Отнимает от свойства speed полученное значение,<br>
+            * при условии что результирующая скорость не меньше нуля<br>
+            */<br>
+            decelerate(value) {}<br>
+            <br>
+            /*
+            * Добавляет в поле distance киллометраж (hours * speed),<br>
+            * но только в том случае если машина заведена!<br>
+            */<br>
+            drive(hours) {}<br>
+            }<br>
+            <br>
+            const mustang = new Car({ maxSpeed: 200, price: 2000 });<br>
+            <br>
+            mustang.turnOn();<br>
+            mustang.accelerate(50);<br>
+            mustang.drive(2);<br>
+            <br>
+            Car.getSpecs(mustang);<br>
+            // maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000<br>
+            <br>
+            mustang.decelerate(20);<br>
+            mustang.drive(1);<br>
+            mustang.turnOff();<br>
+            <br>
+
+            <button class="task5-go">
+              запустить
+            </button>
+
+          </div>
+
+
+        </div>
+      </main>
+      <script type="module" src="js/task-1.js"></script>
+      <script type="module" src="js/task-2.js"></script>
+      <script type="module" src="js/task-3.js"></script>
+      <script type="module" src="js/task-4.js"></script>
+      <script type="module" src="js/task-5.js"></script>
+
+  </body>
+</html>
