@@ -9,8 +9,8 @@ class Car {
    * в консоль значения свойств maxSpeed, speed, isOn, distance и price.
    */
 
-  static getSpecs(objCar){
-    return console.log(objCar);
+  static getSpecs( objCar){
+    return console.log(JSON.stringify(objCar));
   }
 
   /*
@@ -106,6 +106,7 @@ class TeslaCar extends Car{
 const mustang = new TeslaCar({ maxSpeed: 200, price: 2000, name: "Газель" });
 
 start.addEventListener('click', ()=>{
+
   console.clear();
   mustang.turnOn();
   mustang.accelerate(50);
